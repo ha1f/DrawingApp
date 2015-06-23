@@ -27,9 +27,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     
     //クリアボタンをタップされた時
     @IBAction func clearTapped() {
-        var theDrawView = drawViewArea
-        theDrawView.lines = []
-        theDrawView.setNeedsDisplay()
+        drawViewArea.lines = []
+        drawViewArea.setNeedsDisplay()
         mainImageView.image = nil
         
     }
@@ -45,7 +44,6 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     
     //線色変換
     @IBAction func colorTapped(button:UIButton) {
-        var theDrawView = drawViewArea
         var color: UIColor!
         if (button.titleLabel?.text == "Red") {
             color = UIColor.redColor()
@@ -58,7 +56,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         } else if (button.titleLabel?.text == "Yellow"){
             color = UIColor.yellowColor()
         }
-        theDrawView.drawColor = color
+        drawViewArea.drawColor = color
         
         
     }
